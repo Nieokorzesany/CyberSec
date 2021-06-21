@@ -16,11 +16,30 @@ hmdt = api_data['main']['humidity']
 wind_spd = api_data['wind']['speed']
 date_time = datetime.now().strftime("%d %b %Y | %I:%M:%S %p")
 
-print ("-------------------------------------------------------------")
-print ("Weather Stats for - {}  || {}".format(location.upper(), date_time))
-print ("-------------------------------------------------------------")
+#print ("-------------------------------------------------------------")
+#print ("Weather Stats for - {}  || {}".format(location.upper(), date_time))
+#print ("-------------------------------------------------------------")
 
-print ("Current temperature is: {:.2f} deg C".format(temp_city))
-print ("Current weather desc  :",weather_desc)
-print ("Current Humidity      :",hmdt, '%')
-print ("Current wind speed    :",wind_spd ,'kmph')
+#print ("Current temperature is: {:.2f} deg C".format(temp_city))
+#print ("Current weather desc  :",weather_desc)
+#print ("Current Humidity      :",hmdt, '%')
+#print ("Current wind speed    :",wind_spd ,'kmph')
+
+data = '''-------------------------------------------------------------\n
+Weather Stats for - {}  || {}\n
+-------------------------------------------------------------\n
+Current temperature is: {:.2f} deg C\n
+Current weather desc  :{}\n
+Current Humidity      :{} %\n
+Current wind speed    :{} kmph\n
+'''.format(location.upper(),date_time,temp_city,weather_desc,hmdt,wind_spd)
+
+filename =datetime.now().strftime("%d-%b-%Y-%I-%M")
+
+
+#Create and write to txt file
+
+f = open("{}.txt".format(filename), "w")
+f.write(data)
+f.close
+
