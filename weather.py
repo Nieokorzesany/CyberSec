@@ -39,7 +39,7 @@ filename =datetime.now().strftime("%d-%b-%Y-%I-%M")
 
 #Create and write to txt file
 
-f = open("{}.txt".format(filename), "w")
+f = open("{}-{}.txt".format(location,filename), "w")
 f.write(data)
 f.close
 
