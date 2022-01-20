@@ -1,1 +1,3 @@
-
+sudo nmap -T4 -Pn -v -n -sS -F -oG /tmp/tcp.gnmap <ip> 
+sudo nmap -T4 -Pn -v -n -sY -F -oG /tmp/sctp.gnmap <ip>
+sudo nmap -T4 -Pn -v -n -sU -p53,111,123,137,161,500 -oG /tmp/udp.gnmap <ip>
